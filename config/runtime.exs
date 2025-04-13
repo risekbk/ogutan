@@ -69,6 +69,13 @@ if config_env() == :prod do
     adapter: Resend.Swoosh.Adapter,
     api_key: System.get_env("RESEND_API_KEY")
 
+  config :assent,
+    google: [
+      client_id: System.get_env("GOOGLE_CLIENT_ID"),
+      client_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
+      redirect_uri: "http://localhost:4000/auth/google/callback"
+    ]
+
   #       ,domain: System.get_env("RESEND_DOMAIN")
 
   # ## SSL Support
