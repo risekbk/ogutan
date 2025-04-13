@@ -16,7 +16,12 @@ config :swoosh, local: false
 # Do not print debug messages in production
 config :logger, level: :info
 
-config :ogutan, Ogutan.Mailer, adapter: Resend.Swoosh.Adapter
+config :assent,
+  google: [
+    client_id: System.get_env("GOOGLE_CLIENT_ID"),
+    client_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
+    redirect_uri: "http://localhost:4000/auth/google/callback"
+  ]
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
