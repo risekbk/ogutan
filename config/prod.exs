@@ -20,7 +20,7 @@ config :assent,
   google: [
     client_id: System.get_env("GOOGLE_CLIENT_ID"),
     client_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
-    redirect_uri: "http://localhost:4000/auth/google/callback"
+    redirect_uri: "http://ogutan.fly.dev/auth/google/callback"
   ]
 
 # Runtime production configuration, including reading
